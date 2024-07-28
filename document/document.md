@@ -18,6 +18,8 @@
 5. Em seu terminal de linha de comando, execute o comando `git clone [cole-o-link-copiado-aqui]`.
 
 6. Após o clone do projeto, acesse o diretório recém clonado (ex.: `cd automacaoVox/`).
+
+7. Caso queira visualizar o código pelo [Visual Studio Code](https://code.visualstudio.com/download), basta executar o comando `code .`.
 ___
 ## Instalação e inicialização do [Cypress](https://cypress.io) 🌲
 1. Na raiz do projeto, execute o comando `npm install cypress` (ou `npm i cypress -D` para a versão curta)
