@@ -5,7 +5,7 @@ class LoginPage {
 
   acessoPagina() {
     // Configuração de viewport
-    cy.viewport(1500, 800);
+    cy.viewport(1920, 1080);
 
     // Carregando os dados do fixture
     cy.fixture("dados").then(({ urlBase }) => {

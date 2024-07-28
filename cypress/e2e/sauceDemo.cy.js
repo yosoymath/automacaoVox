@@ -16,9 +16,12 @@ function adicionarCarrinho() {
     cy.get(':nth-child(1) > .pricebar > .btn_primary').click()
     cy.get(':nth-child(2) > .pricebar > .btn_primary').click()
     cy.get(':nth-child(4) > .pricebar > .btn_primary').click()
-    cy.get('.fa-layers-counter').should('be.visible');
 }
-
+function removerProdutos(){
+    cy.get('.pricebar > .btn_secondary').each(($el) =>{ // Itera sobre cada elemento encontrado.
+        cy.wrap($el).click();   // Envolve o elemento jQuery em um objeto Cypress e clica nele.
+    })
+}
 
 describe('Cenários Sauce Demo', () => {
 
@@ -54,5 +57,21 @@ describe('Cenários Sauce Demo', () => {
 
         //Função para adicionar produtos ao carrinho
         adicionarCarrinho();
+
+        //Assert para saber se os produtos foram adicionados
+        cy.get('.fa-layers-counter').should('be.visible');  
+    })
+    it('Remover produtos do carrinho', () =>{
+        //Função de login
+        loginPage.loginStandardUser();
+
+        //Função para adicionar produtos ao carrinho
+        adicionarCarrinho();
+
+        //Função para remover produtos do carrinho
+        removerProdutos();
+
+        //Assert para saber não existe o elemento de contador no carrinho
+        cy.get('.fa-layers-counter').should('not.exist');  
     })
 })
