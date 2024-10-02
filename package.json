@@ -1,0 +1,23 @@
+{
+  "name": "automacaoVox",
+  "version": "1.0.0",
+  "description": "👋 Seja bem-vinda(o)!",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosoymath/automacaoVox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yosoymath/automacaoVox/issues"
+  },
+  "homepage": "https://github.com/yosoymath/automacaoVox#readme",
+  "devDependencies": {
+    "cypress": "^13.15.0"
+  }
+}
