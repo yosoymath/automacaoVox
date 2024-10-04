@@ -4,11 +4,11 @@ on:
   # Executa o workflow em cada push para branches específicas e pull requests
   push:
     branches:
-      - main
+      - master
       - develop
   pull_request:
     branches:
-      - main
+      - master
       - develop
 
 jobs:
