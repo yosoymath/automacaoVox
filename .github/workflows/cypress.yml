@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests              # Executa os testes do Cypress
-        run: npx cypress run
+        run: npm cypress run
 
       - name: Upload Cypress artifacts       # Faz upload de artefatos como vídeos e screenshots (opcional)
         if: always()
