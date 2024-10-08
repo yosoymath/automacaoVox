@@ -1,37 +1,12 @@
-name: Cypress Tests
-
-on:                    # Especifica quando o workflow será executado
-  push:                 # Executa os testes quando houver push no branch especificado
-    branches:
-      - master
-  pull_request:         # Executa os testes quando um pull request for aberto para o branch main
-    branches:
-      - master
-
+name: End-to-end tests
+on: push
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
+  cypress-run:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Check out code                 # Faz o checkout do código para a action
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js                 # Configura o Node.js na versão necessária
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies           # Instala dependências do projeto
-        run: npm install
-
-      - name: Run Cypress tests              # Executa os testes do Cypress
-        run: npm cypress run
-
-      - name: Upload Cypress artifacts       # Faz upload de artefatos como vídeos e screenshots (opcional)
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-artifacts
-          path: |
-            cypress/screenshots
-            cypress/videos
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
